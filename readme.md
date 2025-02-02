@@ -8,12 +8,14 @@ Genellikle veri almak için kullanılır.
 Önbelleğe alınabilir.
 
 @GetMapping
-public List<Product> getAllProducts() {
+public List<Product> getAllProducts(){
 return productService.getAllProducts();
 }
+
 veya
+
 @GetMapping("/id")
-public Optional<Product> getProductById(Long id) {
+public Optional<Product> getProductById(Long id){
 return productService.getProductById(id);
 }
 
@@ -27,6 +29,8 @@ Genellikle veri göndermek için kullanılır.
 Önbelleğe alınamaz.
 Güvenli bir yöntem değildir (veri üzerinde değişiklik yapabilir).
 Örnek: Bir web sitesinde bir formu doldurup gönderdiğinizde, tarayıcınız bir POST isteği gönderir.
+
+
 @PostMapping
 public Product createProduct(Product product){
 return productService.createProduct(product);
