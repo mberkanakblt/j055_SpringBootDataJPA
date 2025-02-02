@@ -13,7 +13,7 @@ return productService.getAllProducts();
 }
 veya
 @GetMapping("/id")
-public Optional<Product> getProductById(@PathVariable Long id) {
+public Optional<Product> getProductById(Long id) {
 return productService.getProductById(id);
 }
 
@@ -28,7 +28,7 @@ Genellikle veri göndermek için kullanılır.
 Güvenli bir yöntem değildir (veri üzerinde değişiklik yapabilir).
 Örnek: Bir web sitesinde bir formu doldurup gönderdiğinizde, tarayıcınız bir POST isteği gönderir.
 @PostMapping
-public Product createProduct(@RequestBody Product product) {
+public Product createProduct(Product product){
 return productService.createProduct(product);
 }
 
@@ -46,7 +46,7 @@ tarayıcınız bir PUT isteği gönderebilir.
 
 
 @PutMapping("/id")
-public Product updateProduct(@PathVariable Long id, @RequestBody Product product) {
+public Product updateProduct( Long id,Product product) {
 return productService.updateProduct(id, product);
 }
 
@@ -61,7 +61,7 @@ Güvenli bir yöntem değildir (veri üzerinde değişiklik yapabilir).
 Örnek: Bir web sitesinde bir gönderiyi sildiğinizde, tarayıcınız bir DELETE isteği gönderebilir.
 
 @DeleteMapping("/{id}")
-public void deleteProduct(@PathVariable Long id) {
+public void deleteProduct(Long id) {
 productService.deleteProduct(id);
 }
 
